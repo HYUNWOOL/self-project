@@ -1,9 +1,13 @@
 import { Resolver, Query, Mutation, Arg } from "type-graphql";
 import { User } from "../entity/User";
 import { userLoader } from "../loader/userLoader";
+import { UserService } from "../service/user.service";
+import { DetailService } from "../service/userDetail.service";
+
 
 @Resolver()
 export class UserResolver {
+  constructor(){}
 //   @Query(() => User) 
 //   async user() {
 //     const user = await User.findOne({where:{id:1}});
@@ -12,6 +16,11 @@ export class UserResolver {
 
   @Query(() => User)
   async user(@Arg("id") id: number) {
+  // 보내는 쪽 (userService)
+  UserService.sendMessage('Hello from UserService', 'myQueue');
+
+  // 받는 쪽 (detailService)
+  DetailService.receiveMessage('myQueue');
   return userLoader().load(id);
   }
 
