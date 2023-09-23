@@ -1,0 +1,27 @@
+
+# 개발환경
+```json
+{
+  "name": "self-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "typeorm": "ts-node node_modules/typeorm/cli.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^3.12.0",
+    "dataloader": "^2.2.2",
+    "graphql": "^15.3.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.2.0",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.1.1",
+    "typeorm": "^0.3.0"
+  }
+}
+```
+# 2023-04-09 DataLoader 스타일 이해하기
